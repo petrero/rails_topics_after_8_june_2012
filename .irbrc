@@ -13,4 +13,9 @@ def y(obj)
   puts obj.to_yaml
 end
 
-
+class Object
+  def mate(method_name)
+    file, line = method(method_name).source_location
+    `gedit '#{file}'` 
+  end
+end

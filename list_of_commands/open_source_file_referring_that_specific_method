@@ -1,0 +1,4 @@
+rails c
+Loading development environment (Rails 3.2.8)
+>> helper.mate(:number_to_currency)
+
