@@ -1,0 +1,176 @@
+rails c
+Loading development environment (Rails 3.2.8)
+1.9.3p194 :001 > app.products_path
+ => "/products" 
+1.9.3p194 :002 > app.get _
+  Product Load (0.3ms)  SELECT "products".* FROM "products" 
+ => 200 
+1.9.3p194 :003 > puts app.response.body
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Store</title>
+    <link href="/assets/application.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/layout.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/products.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <script src="/assets/jquery.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script>
+<script src="/assets/products.js?body=1" type="text/javascript"></script>
+<script src="/assets/application.js?body=1" type="text/javascript"></script>
+    <meta content="authenticity_token" name="csrf-param" />
+<meta content="dazc5uMkwqWZ4hC3zJXIt+mTUe+e2GOx+L1tt6dOMUc=" name="csrf-token" />
+  </head>
+  <body>
+    <div id="container">
+      <h1>Products</h1>
+
+<table id="products">
+  <tr>
+    <th>Product Name</th>
+    <th>Release Date</th>
+    <th>Price</th>
+  </tr>
+  <tr>
+    <td><a href="/products/1">Settlers of Catan</a></td>
+    <td>August  5, 2012</td>
+    <td>$29.95</td>
+  </tr>
+  <tr>
+    <td><a href="/products/2">Red Shirt</a></td>
+    <td>June 23, 2012</td>
+    <td>$12.49</td>
+  </tr>
+  <tr>
+    <td><a href="/products/3">Oak Coffee Table</a></td>
+    <td>August  6, 2012</td>
+    <td>$223.99</td>
+  </tr>
+  <tr>
+    <td><a href="/products/4">Technodrome</a></td>
+    <td>June 28, 2012</td>
+    <td>$27.99</td>
+  </tr>
+  <tr>
+    <td><a href="/products/5">Oh&#x27;s Cereal</a></td>
+    <td>June 30, 2012</td>
+    <td>$3.95</td>
+  </tr>
+  <tr>
+    <td><a href="/products/6">Game Console</a></td>
+    <td>September  5, 2012</td>
+    <td>$299.95</td>
+  </tr>
+  <tr>
+    <td><a href="/products/7">Video Game</a></td>
+    <td>July 15, 2012</td>
+    <td>$29.95</td>
+  </tr>
+  <tr>
+    <td><a href="/products/8">Lawn Chair</a></td>
+    <td>August  7, 2012</td>
+    <td>$34.99</td>
+  </tr>
+  <tr>
+    <td><a href="/products/9">Dog Toy Bone</a></td>
+    <td>September  8, 2012</td>
+    <td>$2.99</td>
+  </tr>
+  <tr>
+    <td><a href="/products/10">Heated Blanket</a></td>
+    <td>August  3, 2012</td>
+    <td>$27.95</td>
+  </tr>
+  <tr>
+    <td><a href="/products/11">Flux Capacitor</a></td>
+    <td>August 13, 2012</td>
+    <td>$19.55</td>
+  </tr>
+  <tr>
+    <td><a href="/products/12">Chocolate Pie</a></td>
+    <td>August 31, 2012</td>
+    <td>$3.14</td>
+  </tr>
+  <tr>
+    <td><a href="/products/13">Acoustic Guitar</a></td>
+    <td>July 13, 2012</td>
+    <td>$1,025.00</td>
+  </tr>
+  <tr>
+    <td><a href="/products/14">Model Enterprise</a></td>
+    <td>September  8, 2012</td>
+    <td>$27.99</td>
+  </tr>
+  <tr>
+    <td><a href="/products/15">Agricola</a></td>
+    <td>August  8, 2012</td>
+    <td>$45.99</td>
+  </tr>
+  <tr>
+    <td><a href="/products/16">Stone Age</a></td>
+    <td>August 19, 2012</td>
+    <td>$34.99</td>
+  </tr>
+  <tr>
+    <td><a href="/products/17">7 Wonders</a></td>
+    <td>July 25, 2012</td>
+    <td>$28.75</td>
+  </tr>
+  <tr>
+    <td><a href="/products/18">Millennium Falcon</a></td>
+    <td>August 12, 2012</td>
+    <td>$3,597,200.00</td>
+  </tr>
+  <tr>
+    <td><a href="/products/19">Answer to Everything</a></td>
+    <td>June 30, 2012</td>
+    <td>$42.00</td>
+  </tr>
+  <tr>
+    <td><a href="/products/20">Box Kite</a></td>
+    <td>July 17, 2012</td>
+    <td>$63.00</td>
+  </tr>
+  <tr>
+    <td><a href="/products/21">1000 Piece Jigsaw Puzzle</a></td>
+    <td>August 11, 2012</td>
+    <td>$14.99</td>
+  </tr>
+  <tr>
+    <td><a href="/products/22">Rubber Ducky</a></td>
+    <td>August 19, 2012</td>
+    <td>$4.75</td>
+  </tr>
+  <tr>
+    <td><a href="/products/23">Unicorn Action Figure</a></td>
+    <td>September  1, 2012</td>
+    <td>$8.75</td>
+  </tr>
+  <tr>
+    <td><a href="/products/24">Rack</a></td>
+    <td>July 21, 2012</td>
+    <td>$32.49</td>
+  </tr>
+  <tr>
+    <td><a href="/products/25">Model Train Rails</a></td>
+    <td>July 21, 2012</td>
+    <td>$45.00</td>
+  </tr>
+  <tr>
+    <td><a href="/products/26">CanCan Music Record</a></td>
+    <td>July  1, 2012</td>
+    <td>$2.99</td>
+  </tr>
+  <tr>
+    <td><a href="/products/27">dutu</a></td>
+    <td>September 20, 2012</td>
+    <td>$39.00</td>
+  </tr>
+</table>
+
+<p><a href="/products/new">New Product</a></p>
+
+    </div>
+  </body>
+</html>
+ => nil 
+
