@@ -1,0 +1,9 @@
+1.9.3p194 :013 > Product.first.to_param
+  Product Load (0.2ms)  SELECT "products".* FROM "products" LIMIT 1
+ => "1" 
+1.9.3p194 :014 > reload!
+Reloading...
+ => true 
+1.9.3p194 :015 > Product.first.to_param
+  Product Load (0.1ms)  SELECT "products".* FROM "products" LIMIT 1
+ => "1-settlers-of-catan" 
