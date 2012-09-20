@@ -1,0 +1,25 @@
+rails c
+Loading development environment (Rails 3.2.8)
+1.9.3p194 :006 > helper.class
+ => ActionView::Base 
+1.9.3p194 :007 > helper.number_to_currency(123.456)
+ => "$123.46" 
+1.9.3p194 :008 > helper.params
+RuntimeError: ActionView::Helpers::ControllerHelper#params delegated to controller.params, but controller is nil: #<ActionView::Base:0xbb44b68 @_config={}, @view_renderer=#<ActionView::Renderer:0xbb44a64 @lookup_context=#<ActionView::LookupContext:0xbb44b2c @details_key=nil, @details={:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :png, :jpeg, :gif, :bmp, :tiff, :mpeg, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip], :handlers=>[:erb, :builder, :coffee]}, @skip_default_locale=false, @cache=true, @prefixes=[], @rendered_format=nil, @view_paths=#<ActionView::PathSet:0xbb44ac8 @paths=[]>>>, @_assigns={}, @_controller=nil, @view_flow=#<ActionView::OutputFlow:0xbb44a50 @content={}>, @output_buffer=nil, @virtual_path=nil>
+	from /home/petrero/.rvm/gems/ruby-1.9.3-p194@rails328/gems/actionpack-3.2.8/lib/action_view/helpers/controller_helper.rb:13:in `rescue in params'
+	from /home/petrero/.rvm/gems/ruby-1.9.3-p194@rails328/gems/actionpack-3.2.8/lib/action_view/helpers/controller_helper.rb:10:in `params'
+	from (irb):8
+	from /home/petrero/.rvm/gems/ruby-1.9.3-p194@rails328/gems/railties-3.2.8/lib/rails/commands/console.rb:47:in `start'
+	from /home/petrero/.rvm/gems/ruby-1.9.3-p194@rails328/gems/railties-3.2.8/lib/rails/commands/console.rb:8:in `start'
+	from /home/petrero/.rvm/gems/ruby-1.9.3-p194@rails328/gems/railties-3.2.8/lib/rails/commands.rb:41:in `<top (required)>'
+	from script/rails:6:in `require'
+	from script/rails:6:in `<main>'
+1.9.3p194 :009 > controller
+ => #<ApplicationController:0xac61f24 @_routes=nil, @_action_has_layout=true, @_headers={"Content-Type"=>"text/html"}, @_status=200, @_request=nil, @_response=nil> 
+1.9.3p194 :010 > helper.controller = controller
+ => #<ApplicationController:0xac61f24 @_routes=nil, @_action_has_layout=true, @_headers={"Content-Type"=>"text/html"}, @_status=200, @_request=nil, @_response=nil> 
+1.9.3p194 :011 > controller.params = {foo: "bar"}
+ => {:foo=>"bar"} 
+1.9.3p194 :012 > helper.params
+ => {:foo=>"bar"} 
+
