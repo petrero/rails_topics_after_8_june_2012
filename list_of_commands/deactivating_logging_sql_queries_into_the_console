@@ -1,0 +1,9 @@
+rails c
+1.9.3p194 :016 > Product.count
+   (0.2ms)  SELECT COUNT(*) FROM "products" 
+ => 27 
+1.9.3p194 :017 > ActiveRecord::Base.logger.level = 1
+ => 1 
+1.9.3p194 :018 > Product.count
+ => 27 
+
