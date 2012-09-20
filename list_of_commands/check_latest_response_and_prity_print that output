@@ -1,0 +1,17 @@
+rails c
+1.9.3p194 :004 > app.cookies
+ => #<Rack::Test::CookieJar:0xa21bec0 @default_host="www.example.com", @cookies=[#<Rack::Test::Cookie:0x96b9a78 @default_host="www.example.com", @name_value_raw="_rails_topics_after_8_june_2012_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWI1ZWFmNjU1NGM1MmJjMTAzZjRlNjkzOWUxNjlhNzIxBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTFJNFNTMkhLMm9sRWliUEZrQjhsajNoOGN4ZDZFSExnQS85NFA2WmFZQ289BjsARg%3D%3D--cf0470aa89119b1d5262f16800108d2dd265ec26", @name="_rails_topics_after_8_june_2012_session", @value="BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWI1ZWFmNjU1NGM1MmJjMTAzZjRlNjkzOWUxNjlhNzIxBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTFJNFNTMkhLMm9sRWliUEZrQjhsajNoOGN4ZDZFSExnQS85NFA2WmFZQ289BjsARg==--cf0470aa89119b1d5262f16800108d2dd265ec26", @options={"path"=>"/", "HttpOnly"=>nil, "domain"=>"www.example.com"}>]> 
+1.9.3p194 :005 > app.response.headers
+ => {"Content-Type"=>"text/html; charset=utf-8", "X-UA-Compatible"=>"IE=Edge", "ETag"=>"\"fc42fce35f2cc3aa8926e38370662c44\"", "Cache-Control"=>"max-age=0, private, must-revalidate", "Set-Cookie"=>"_rails_topics_after_8_june_2012_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWI1ZWFmNjU1NGM1MmJjMTAzZjRlNjkzOWUxNjlhNzIxBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTFJNFNTMkhLMm9sRWliUEZrQjhsajNoOGN4ZDZFSExnQS85NFA2WmFZQ289BjsARg%3D%3D--cf0470aa89119b1d5262f16800108d2dd265ec26; path=/; HttpOnly", "X-Request-Id"=>"a314bc64e51e5c475037b527ba9826a2", "X-Runtime"=>"0.167994", "Content-Length"=>"4220"} 
+1.9.3p194 :006 > pp _; nil
+{"Content-Type"=>"text/html; charset=utf-8",
+ "X-UA-Compatible"=>"IE=Edge",
+ "ETag"=>"\"fc42fce35f2cc3aa8926e38370662c44\"",
+ "Cache-Control"=>"max-age=0, private, must-revalidate",
+ "Set-Cookie"=>
+  "_rails_topics_after_8_june_2012_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWI1ZWFmNjU1NGM1MmJjMTAzZjRlNjkzOWUxNjlhNzIxBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTFJNFNTMkhLMm9sRWliUEZrQjhsajNoOGN4ZDZFSExnQS85NFA2WmFZQ289BjsARg%3D%3D--cf0470aa89119b1d5262f16800108d2dd265ec26; path=/; HttpOnly",
+ "X-Request-Id"=>"a314bc64e51e5c475037b527ba9826a2",
+ "X-Runtime"=>"0.167994",
+ "Content-Length"=>"4220"}
+ => nil 
+

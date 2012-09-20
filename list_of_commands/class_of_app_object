@@ -1,0 +1,6 @@
+rails c
+1.9.3p194 :003 > app.class
+ => ActionDispatch::Integration::Session
+
+## check on http://guides.rubyonrails.org/testing.html#integration-testing to
+## see the methods you can call on the map object
