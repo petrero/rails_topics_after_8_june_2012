@@ -1,0 +1,6 @@
+rails cLoading development environment (Rails 3.2.8)
+>> require 'methodfinder'
+=> true
+>> "abc".find_method("ABC")
+=> ["String#swapcase", "String#swapcase!", "String#upcase", "String#upcase!"]
+
