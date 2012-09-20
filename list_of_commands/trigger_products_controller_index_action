@@ -1,0 +1,8 @@
+rails c
+Loading development environment (Rails 3.2.8)
+1.9.3p194 :001 > app.products_path
+ => "/products" 
+1.9.3p194 :002 > app.get _
+  Product Load (0.3ms)  SELECT "products".* FROM "products" 
+ => 200 
+
