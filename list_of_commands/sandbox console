@@ -1,0 +1,9 @@
+rails c --sandbox
+Loading development environment in sandbox (Rails 3.2.8)
+Any modifications you make will be rolled back on exit
+1.9.3p194 :001 > Product.delete_all
+  SQL (1.4ms)  DELETE FROM "products"
+ => 27 
+1.9.3p194 :002 > exit
+   (0.2ms)  rollback transaction
+
