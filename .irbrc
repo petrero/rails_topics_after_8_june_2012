@@ -27,3 +27,11 @@ if defined? Bundler
   Gem::Specification.reset
   load 'rubygems/custom_require.rb'
 end
+
+if defined? Rails
+  begin
+    require 'hirb'
+    Hirb.enable
+  rescue LoadError
+  end
+end
