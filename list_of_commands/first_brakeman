@@ -1,0 +1,102 @@
+brakeman
+[Notice] Detected Rails 3 application
+Loading scanner...
+[Notice] Using Ruby 1.9.3. Please make sure this matches the one used to run your Rails application.
+Processing application in /home/petrero/rails/rails_topics_after_8_june_2012
+Processing configuration...
+[Notice] Escaping HTML by default
+Processing gems...
+Processing initializers...
+Processing libs...
+Processing routes...          
+Processing templates...       
+Processing data flow in templates...
+Processing models...          
+Processing controllers...     
+Processing data flow in controllers...
+Indexing call sites...        
+Running checks in parallel...
+ - CheckBasicAuth
+ - CheckCrossSiteScripting
+ - CheckContentTag
+ - CheckDefaultRoutes
+ - CheckDigestDoS
+ - CheckEscapeFunction
+ - CheckEvaluation
+ - CheckExecute
+ - CheckFileAccess
+ - CheckFilterSkipping
+ - CheckForgerySetting
+ - CheckLinkTo
+ - CheckLinkToHref
+ - CheckMailTo
+ - CheckMassAssignment
+ - CheckModelAttributes
+ - CheckNestedAttributes
+ - CheckQuoteTableName
+ - CheckRedirect
+ - CheckRender
+ - CheckResponseSplitting
+ - CheckSafeBufferManipulation
+ - CheckSelectTag
+ - CheckSelectVulnerability
+ - CheckSend
+ - CheckSendFile
+ - CheckSessionSettings
+ - CheckSingleQuotes
+ - CheckSkipBeforeFilter
+ - CheckSQL
+ - CheckStripTags
+ - CheckTranslateBug
+ - CheckValidationRegex
+ - CheckWithoutProtection
+Checks finished, collecting results...
+Generating report...
+
++BRAKEMAN REPORT+
+
+Application path: /home/petrero/rails/rails_topics_after_8_june_2012
+Rails version: 3.2.8
+Generated at 2012-09-21 21:56:00 +0300
+Checks run: BasicAuth, ContentTag, CrossSiteScripting, DefaultRoutes, DigestDoS, EscapeFunction, Evaluation, Execute, FileAccess, FilterSkipping, ForgerySetting, LinkTo, LinkToHref, MailTo, MassAssignment, ModelAttributes, NestedAttributes, QuoteTableName, Redirect, Render, ResponseSplitting, SQL, SafeBufferManipulation, SelectTag, SelectVulnerability, Send, SendFile, SessionSettings, SingleQuotes, SkipBeforeFilter, StripTags, TranslateBug, ValidationRegex, WithoutProtection
+
+
++SUMMARY+
+
++-------------------+-------+
+| Scanned/Reported  | Total |
++-------------------+-------+
+| Controllers       | 4     |
+| Models            | 2     |
+| Templates         | 5     |
+| Errors            | 0     |
+| Security Warnings | 3 (2) |
++-------------------+-------+
+
++-------------------+-------+
+| Warning Type      | Total |
++-------------------+-------+
+| Format Validation | 1     |
+| Redirect          | 1     |
+| SQL Injection     | 1     |
++-------------------+-------+
+
+
++SECURITY WARNINGS+
+
++------------+--------------------+--------+---------------+------------------>>
+| Confidence | Class              | Method | Warning Type  | Message          >>
++------------+--------------------+--------+---------------+------------------>>
+| High       | ProductsController | index  | SQL Injection | Possible SQL inje>>
+| Weak       | SessionsController | create | Redirect      | Possible unprotec>>
++------------+--------------------+--------+---------------+------------------>>
+
+
+
+Model Warnings:
+
++------------+-------+-------------------+------------------------------------>>
+| Confidence | Model | Warning Type      | Message                            >>
++------------+-------+-------------------+------------------------------------>>
+| High       | User  | Format Validation | Insufficient validation for 'name' >>
++------------+-------+-------------------+------------------------------------>>
