@@ -1,0 +1,55 @@
+brakeman -o brakeman.html
+[Notice] Detected Rails 3 application
+Loading scanner...
+[Notice] Using Ruby 1.9.3. Please make sure this matches the one used to run your Rails application.
+Processing application in /home/petrero/rails/rails_topics_after_8_june_2012
+Processing configuration...
+[Notice] Escaping HTML by default
+Processing gems...
+Processing initializers...
+Processing libs...
+Processing routes...          
+Processing templates...       
+Processing data flow in templates...
+Processing models...          
+Processing controllers...     
+Processing data flow in controllers...
+Indexing call sites...        
+Running checks in parallel...
+ - CheckBasicAuth
+ - CheckCrossSiteScripting
+ - CheckContentTag
+ - CheckDefaultRoutes
+ - CheckDigestDoS
+ - CheckEscapeFunction
+ - CheckEvaluation
+ - CheckExecute
+ - CheckFileAccess
+ - CheckFilterSkipping
+ - CheckForgerySetting
+ - CheckLinkTo
+ - CheckLinkToHref
+ - CheckMailTo
+ - CheckMassAssignment
+ - CheckModelAttributes
+ - CheckNestedAttributes
+ - CheckQuoteTableName
+ - CheckRedirect
+ - CheckRender
+ - CheckResponseSplitting
+ - CheckSafeBufferManipulation
+ - CheckSelectTag
+ - CheckSelectVulnerability
+ - CheckSend
+ - CheckSendFile
+ - CheckSessionSettings
+ - CheckSingleQuotes
+ - CheckSkipBeforeFilter
+ - CheckSQL
+ - CheckStripTags
+ - CheckTranslateBug
+ - CheckValidationRegex
+ - CheckWithoutProtection
+Checks finished, collecting results...
+Generating report...
+Report saved in 'brakeman.html'
