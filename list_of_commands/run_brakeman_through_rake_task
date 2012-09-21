@@ -1,0 +1,4 @@
+brakeman --rake
+Task created in lib/tasks/brakeman.rake
+Usage: rake brakeman:run[output_file]
+
