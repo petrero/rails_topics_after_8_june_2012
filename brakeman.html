@@ -165,7 +165,7 @@ p {
   <tr>
     <td>/home/petrero/rails/rails_topics_after_8_june_2012</td>
     <td>3.2.8</td>
-    <td>2012-09-21 23:09:38 +0300</td>
+    <td>2012-09-21 23:27:44 +0300</td>
     <td>BasicAuth, ContentTag, CrossSiteScripting, DefaultRoutes, DigestDoS, EscapeFunction, Evaluation, Execute, FileAccess, FilterSkipping, ForgerySetting, LinkTo, LinkToHref, MailTo, MassAssignment, ModelAttributes, NestedAttributes, QuoteTableName, Redirect, Render, ResponseSplitting, SQL, SafeBufferManipulation, SelectTag, SelectVulnerability, Send, SendFile, SessionSettings, SingleQuotes, SkipBeforeFilter, StripTags, TranslateBug, ValidationRegex, WithoutProtection</td>
   </tr>
 </table>
@@ -194,7 +194,7 @@ p {
   </tr>
   <tr>
     <td>Security Warnings</td>
-    <td>3 <span class='high-confidence'>(2)</span></td>
+    <td>2 <span class='high-confidence'>(1)</span></td>
   </tr>
 </table>
 <br>
@@ -214,11 +214,6 @@ p {
     <td>1</td>
   </tr>
   
-  <tr>
-    <td>SQL Injection</td>
-    <td>1</td>
-  </tr>
-  
 </table>
 <br>
 <h2>Security Warnings</h2>  
@@ -230,70 +225,6 @@ p {
     <th>Method</th>
     <th>Warning Type</th>
     <th>Message</th>
-  </tr>
-  
-  <tr>
-    <td><span class='high-confidence'>High</span></td>
-    <td>ProductsController</td>
-    <td>index</td>
-    <td><a href="http://brakemanscanner.org/docs/warning_types/sql_injection/">SQL Injection</a></td>
-    <td><div class='warning_message' onClick="toggle('context2');toggle('message2');toggle('full_message2')" >Possible SQL injection near line 3: Product.order(&quot;name #{<span class="user_input">params[:direction]</span>}&quot;)<table id='context2' class='context' style='display:none'><caption>app/controllers/products_controller.rb</caption>        <tr class='context first'>
-          <td class='context_line'>
-            <pre class='context'>1</pre>
-          </td>
-          <td class='context'>
-            <pre class='context'>class ProductsController &lt; ApplicationController</pre>
-          </td>
-        </tr>
-          <tr class='context alt near_error'>
-            <td class='context_line'>
-              <pre class='context'>2</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>  def index</pre>
-            </td>
-          </tr>
-          <tr class='context error'>
-            <td class='context_line'>
-              <pre class='context'>3</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>    @products = Product.order(&quot;name #{params[:direction]}&quot;)</pre>
-            </td>
-          </tr>
-          <tr class='context alt near_error'>
-            <td class='context_line'>
-              <pre class='context'>4</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>  end</pre>
-            </td>
-          </tr>
-          <tr class='context'>
-            <td class='context_line'>
-              <pre class='context'>6</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>  def show</pre>
-            </td>
-          </tr>
-          <tr class='context alt'>
-            <td class='context_line'>
-              <pre class='context'>7</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>    @product = Product.find(params[:id])</pre>
-            </td>
-          </tr>
-          <tr class='context'>
-            <td class='context_line'>
-              <pre class='context'>8</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>  end</pre>
-            </td>
-          </tr>
-</table></div></td>
   </tr>
   
   <tr>
@@ -398,7 +329,7 @@ p {
     <td><span class='high-confidence'>High</span></td>
     <td>User</td>
     <td><a href="http://brakemanscanner.org/docs/warning_types/format_validation/">Format Validation</a></td>
-    <td><div class='warning_message' onClick="toggle('context3');toggle('message3');toggle('full_message3')" >Insufficient validation for 'name' using /^\w+$/. Use \A and \z as anchors near line 4<table id='context3' class='context' style='display:none'><caption>app/models/user.rb</caption>        <tr class='context first'>
+    <td><div class='warning_message' onClick="toggle('context2');toggle('message2');toggle('full_message2')" >Insufficient validation for 'name' using /^\w+$/. Use \A and \z as anchors near line 4<table id='context2' class='context' style='display:none'><caption>app/models/user.rb</caption>        <tr class='context first'>
           <td class='context_line'>
             <pre class='context'>1</pre>
           </td>
