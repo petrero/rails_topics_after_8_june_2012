@@ -1,9 +1,7 @@
 <div id="testimonies">
-  <% cache "testimonies#{Date.todat}" do %>
-		<% Twitter.favorites("railscasts", count: 3).each do |tweet| %>
-		  <blockquote><%= tweet.text %></blockquote>
-		  <div class="from">&mdash; @<%= tweet.user.screen_name %></div>
-		<% end %>	
+  <% Testimony.order("tweet_id desc").limit(3).each do |testimony|%>		
+		<blockquote><%= testimony.content %></blockquote>
+		<div class="from">&mdash; @<%= testimony.screen_name %></div>		
   <% end %>
 </div>
 
