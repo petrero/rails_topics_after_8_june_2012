@@ -10,7 +10,9 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
   end
-
+	def delete
+		@product = Product.find(params[:id])
+	end
   def create
 		category = Category.find_or_create_by_name!(params[:product][:category])
 		params[:product][:category_id] = category.id
@@ -38,9 +40,7 @@ class ProductsController < ApplicationController
       render :edit
     end
   end
-	def delete
-		@product = Product.find(params[:id])
-	end
+	
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
