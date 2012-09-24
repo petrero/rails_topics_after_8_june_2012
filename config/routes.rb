@@ -1,17 +1,10 @@
 RailsTopicsAfter8June2012::Application.routes.draw do
-  get "categories/show"
-
-  get "categories/index"
-
-  get "categories/new"
-
-  get "products/show"
-
-  get "products/index"
-
-  get "products/new"
-
   resources :categories
-  resources :products
+  resources :products do
+		member do
+			get :delete
+			delete :delete, action: :destroy
+    end
+	end
   root to: 'products#index'
 end
