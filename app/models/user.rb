@@ -21,4 +21,9 @@ class User < ActiveRecord::Base
 	def friends_count
 		facebook { |fb| fb.get_connection("me", "friends").size }
 	end
+
+	def self.share_review(user_id, movie_url)
+		user = User.find(user_id)
+		user.facebook.put_connections("me", "cinematronro:review", movie: movie_url)
+	end
 end
