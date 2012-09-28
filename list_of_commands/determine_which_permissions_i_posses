@@ -1,0 +1,17 @@
+rails c
+>> u.facebook.put_wall_post("testing")
+Koala::Facebook::APIError: OAuthException: (#200) The user hasn't authorized the application to perform this action
+	from /home/petrero/.rvm/gems/ruby-1.9.3-p194@rails328/gems/koala-1.5.0/lib/koala/api/graph_api.rb:426:in `block in graph_call'
+	from /home/petrero/.rvm/gems/ruby-1.9.3-p194@rails328/gems/koala-1.5.0/lib/koala/api.rb:62:in `api'
+	from /home/petrero/.rvm/gems/ruby-1.9.3-p194@rails328/gems/koala-1.5.0/lib/koala/api/graph_api.rb:424:in `graph_call'
+	from /home/petrero/.rvm/gems/ruby-1.9.3-p194@rails328/gems/koala-1.5.0/lib/koala/api/graph_api.rb:134:in `put_connections'
+	from /home/petrero/.rvm/gems/ruby-1.9.3-p194@rails328/gems/koala-1.5.0/lib/koala/api/graph_api.rb:229:in `put_wall_post'
+	from (irb):3
+	from /home/petrero/.rvm/gems/ruby-1.9.3-p194@rails328/gems/railties-3.2.8/lib/rails/commands/console.rb:47:in `start'
+	from /home/petrero/.rvm/gems/ruby-1.9.3-p194@rails328/gems/railties-3.2.8/lib/rails/commands/console.rb:8:in `start'
+	from /home/petrero/.rvm/gems/ruby-1.9.3-p194@rails328/gems/railties-3.2.8/lib/rails/commands.rb:41:in `<top (required)>'
+	from script/rails:6:in `require'
+	from script/rails:6:in `<main>'
+>> u.facebook.get_connection("me", "permissions")
+=> [{"installed"=>1, "email"=>1}]
+>>

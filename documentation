@@ -1,8 +1,12 @@
-Experiment with GraphAPI
+//docs facebook API about users
+http://developers.facebook.com/docs/reference/api/user
+//docs facebook API about permissions
+http://developers.facebook.com/docs/authentication/permissions
+//Experiment with GraphAPI
 http://developers.facebook.com/tools/explorer
 
 
-FacebookAPI gem
+//FacebookAPI gem
 https://github.com/arsduo/koala
-GraphAPI koala module
+//GraphAPI koala module
 http://rubydoc.info/github/arsduo/koala/master/Koala/Facebook/GraphAPIMethods
