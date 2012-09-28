@@ -13,5 +13,12 @@ class User < ActiveRecord::Base
 
 	def facebook
 		@facebook ||= Koala::Facebook::API.new(oauth_token)
+		block_given? ? yield(@facebook) : @facebook
+	rescue Koala::Facebook::APIError => e
+		logger.info e.to_s 
+	end
+
+	def friends_count
+		facebook { |fb| fb.get_connection("me", "friends").size }
 	end
 end
