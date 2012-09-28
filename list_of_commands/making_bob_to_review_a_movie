@@ -1,0 +1,25 @@
+rails c
+>> u = User.last
+  User Load (0.2ms)  SELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT 1
++----+----------+----------+---------+----------+---------+---------+----------+
+| id | provider | uid      | name    | oauth... | oaut... | crea... | updat... |
++----+----------+----------+---------+----------+---------+---------+----------+
+| 4  | facebook | 10000... | Bob ... | AAAFJ... | 2012... | 2012... | 2012-... |
++----+----------+----------+---------+----------+---------+---------+----------+
+1 row in set
+>> y u
+--- !ruby/object:User
+attributes:
+  id: 4
+  provider: facebook
+  uid: '100004349622902'
+  name: Bob Amdcdifbbijb Baosky
+  oauth_token: AAAFJfmfbdDQBALpEA1raWqjP0PI81JrQaP3K3YeDbPhEQP5nREjFAtCRHojxSt7oyl5hyhisy7Mq2Ge8u3BRBx23SXhAVlpZAScdNwwZDZD
+  oauth_expires_at: 2012-11-27 08:21:47.000000000 Z
+  created_at: 2012-09-28 10:22:29.993410000 Z
+  updated_at: 2012-09-28 10:22:29.993410000 Z
+=> nil
+
+>> u.facebook.put_connections("me", "cinematronro:review", movie: "http://samples.ogp.me/362533873827816")
+=> {"id"=>"109143902573930"}
+
