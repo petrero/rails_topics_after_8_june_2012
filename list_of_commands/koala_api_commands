@@ -1,0 +1,29 @@
+>> u = User.first
+  User Load (0.2ms)  SELECT "users".* FROM "users" LIMIT 1
++----+----------+----------+---------+----------+---------+---------+----------+
+| id | provider | uid      | name    | oauth... | oaut... | crea... | updat... |
++----+----------+----------+---------+----------+---------+---------+----------+
+| 1  | facebook | 11548... | Diac... | AAAFJ... | 2012... | 2012... | 2012-... |
++----+----------+----------+---------+----------+---------+---------+----------+
+1 row in set
+>> y u
+--- !ruby/object:User
+attributes:
+  id: 1
+  provider: facebook
+  uid: '1154824163'
+  name: Diaconescu Petrisor
+  oauth_token: AAAFJfmfbdDQBAJrxgu1ssLF6ZCbcRQEdFKIIzz4pO2PZAun83O6VE7BYZADnYBVuQwvfxy8yhNbUv7s9s0v6pVZASmzLCwyAgFKXJny3wAZDZD
+  oauth_expires_at: 2012-11-26 18:15:31.000000000 Z
+  created_at: 2012-09-27 18:50:49.168011000 Z
+  updated_at: 2012-09-27 18:50:49.168011000 Z
+=> nil
+>> u.facebook.get_object("me")
+=> {"id"=>"1154824163", "name"=>"Diaconescu Petrisor", "first_name"=>"Diaconescu", "last_name"=>"Petrisor", "link"=>"http://www.facebook.com/diaconescu.petrisor", "username"=>"diaconescu.petrisor", "gender"=>"male", "email"=>"petrero@gmail.com", "timezone"=>3, "locale"=>"ro_RO", "verified"=>true, "updated_time"=>"2012-09-27T17:48:02+0000"}
+>> u.facebook.get_connection("me", "accounts")
+=> [{"name"=>"Cinematron", "category"=>"Application", "id"=>"362282233852980"}, {"name"=>"JobBoardMashup", "category"=>"Application", "id"=>"43803946023"}]
+>> u.facebook.get_object("362282233852980")
+=> {"id"=>"362282233852980", "name"=>"Cinematron", "link"=>"http://www.facebook.com/apps/application.php?id=362282233852980", "namespace"=>"cinematronro", "icon_url"=>"http://static.ak.fbcdn.net/rsrc.php/v2/yT/r/4QVMqOjUhcd.gif", "logo_url"=>"http://static.ak.fbcdn.net/rsrc.php/v2/y_/r/9myDd8iyu0B.gif"}
+>> u.facebook.get_object("Cinematron")
+=> {"name"=>"Cinematron", "is_published"=>true, "website"=>"http://nerdice.com/cinematron/ ", "username"=>"Cinematron", "about"=>"Veja notícias, críticas e curiosidades sobre os melhores filmes e séries Nerds em www.nerdice.com", "can_post"=>true, "talking_about_count"=>601, "category"=>"Community", "id"=>"209143522523658", "link"=>"http://www.facebook.com/Cinematron", "likes"=>3390, "cover"=>{"cover_id"=>257370764367600, "source"=>"http://sphotos-g.ak.fbcdn.net/hphotos-ak-snc7/s720x720/426892_257370764367600_299110213_n.jpg", "offset_y"=>0}}
+>> 
