@@ -1,0 +1,12 @@
+rails c
+>> u = User.last
+  User Load (0.2ms)  SELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT 1
++----+----------+----------+---------+----------+---------+---------+----------+
+| id | provider | uid      | name    | oauth... | oaut... | crea... | updat... |
++----+----------+----------+---------+----------+---------+---------+----------+
+| 2  | facebook | 10000... | Mary... | AAAFJ... | 2012... | 2012... | 2012-... |
++----+----------+----------+---------+----------+---------+---------+----------+
+1 row in set
+>> u.facebook.fql_query("select pic from page where username='amazon' or username='google'")
+=> [{"pic"=>"http://profile.ak.fbcdn.net/hprofile-ak-snc7/373031_9465008123_1931347389_s.jpg"}, {"pic"=>"http://profile.ak.fbcdn.net/hprofile-ak-snc6/276519_104958162837_864712231_s.jpg"}]
+

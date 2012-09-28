@@ -2,6 +2,8 @@
 http://developers.facebook.com/docs/reference/api/user
 //docs facebook API about permissions
 http://developers.facebook.com/docs/authentication/permissions
+//docs facebook query language
+https://developers.facebook.com/docs/reference/fql
 //Experiment with GraphAPI
 http://developers.facebook.com/tools/explorer
 
