@@ -11,3 +11,9 @@ class @CreditCard
 			total += n
 		total % 10 == 0
 
+$.fn.validateCreditCardNumber = ->
+	@each ->
+		$(this).blur ->
+			card = new CreditCard(@value)
+			if !card.validNumber()
+				$(this).next('.error').text("Invalid card number.")
