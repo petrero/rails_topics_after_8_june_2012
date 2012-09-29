@@ -17,3 +17,5 @@ $.fn.validateCreditCardNumber = ->
 			card = new CreditCard(@value)
 			if !card.validNumber()
 				$(this).next('.error').text("Invalid card number.")
+			else
+				$(this).next('.error').text("")	
