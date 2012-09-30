@@ -1,0 +1,2 @@
+//command in terminal
+sidekiq -q high,5 default

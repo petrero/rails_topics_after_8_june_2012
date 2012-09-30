@@ -1,6 +1,7 @@
 class PygmentsWorker
 	include Sidekiq::Worker
 	# sidekiq_options retry: false
+	sidekiq_options queue: "high"
 	
 	def perform(snippet_id)
 		snippet = Snippet.find(snippet_id)
