@@ -39,3 +39,5 @@ gem 'jquery-rails'
 gem 'quiet_assets', group: :development
 gem 'thin'
 gem 'sidekiq'
+gem 'sinatra', require: false
+gem 'slim'
