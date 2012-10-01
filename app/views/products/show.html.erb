@@ -7,7 +7,7 @@
 
 <p>
   <b>Release Date:</b>
-  <%= @product.released_at.try(:strftime, "%B %e, %Y at %I:%M:%S %p") %>
+  <%= @product.released_at.try(:strftime, "%B %e, %Y at %I:%M:%S %p") if !@product.released_at.blank? %>
 </p>
 
 <p>

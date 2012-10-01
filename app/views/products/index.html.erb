@@ -9,7 +9,7 @@
 <% @products.each do |product| %>
   <tr>
     <td><%= link_to(product.name, product) %></td>
-    <td><%= product.released_at.strftime("%B %e, %Y") %></td>
+    <td><%= product.released_at.strftime("%B %e, %Y")  if !product.released_at.blank? %></td>
     <td class="price"><%= number_to_currency(product.price_in_cents/100.0) %></td>
   </tr>
 <% end %>
