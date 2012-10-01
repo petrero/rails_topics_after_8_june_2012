@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.order(:created_at)
+    @projects = Project.order(:created_at).select("projects.*, count(tasks.id) as tasks_count").join(:tasks)
   end
 
   def show
