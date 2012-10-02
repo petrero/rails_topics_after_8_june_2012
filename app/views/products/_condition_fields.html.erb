@@ -1,0 +1,14 @@
+<div class="field">
+	<%# on each of the condition i call attribute_fields %>
+	<%= f.attribute_fields do |a| %>
+		<%# for each of the attribute i call attribute_select 
+			which will display a list of attributes on the product model 
+		%>
+		<%= a.attribute_select associations: [:category] %>
+	<% end %>
+	<%= f.predicate_select %> <%#will determine how that given attribute is searched by %>
+	<%= f.value_fields do |v| %>
+		<%= v.text_field :value %>
+	<% end %>
+	<%= link_to "remove", '#', class: "remove_fields" %>
+</div>
