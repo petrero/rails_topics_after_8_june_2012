@@ -8,7 +8,7 @@
 				<%# for each of the attribute i call attribute_select 
 					which will display a list of attributes on the product model 
 				%>
-				<%= a.attribute_select %>
+				<%= a.attribute_select associations: [:category] %>
 			<% end %>
 			<%= c.predicate_select %> <%#will determine how that given attribute is searched by %>
 			<%= c.value_fields do |v| %>
