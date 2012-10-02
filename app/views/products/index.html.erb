@@ -5,6 +5,12 @@
 		<%= render "condition_fields", f:	c %>
 	<% end %>
 	<%= link_to_add_fields "Add Condition", f, :condition %></p>
+	<div class="field">
+		Sort:
+		<%= f.sort_fields do |s| %>
+			<%= s.sort_select %>	
+		<% end %>
+	</div>
 	<div class="actions"><%=f.submit "Search"%></div>
 <% end %>
 
