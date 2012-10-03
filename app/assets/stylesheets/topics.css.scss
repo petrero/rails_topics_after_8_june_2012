@@ -1,0 +1,15 @@
+// Place all the styles related to the Topics controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#topics h2 {
+  margin-bottom: 5px;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.post {
+  border: solid 1px #CCC;
+  margin-bottom: 15px;
+  padding: 12px 16px;
+}

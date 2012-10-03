@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  topic: 
+  content: MyText
+  inline_images: false
+
+two:
+  topic: 
+  content: MyText
+  inline_images: false
