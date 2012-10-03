@@ -12,7 +12,7 @@ class TopicsController < ApplicationController
   end
 
   def create
-    @topic = Topic.new(topic_params)
+    @topic = Topic.new(permitted_params.topic)
     if @topic.save
       redirect_to @topic, notice: "Created topic."
     else
@@ -26,7 +26,7 @@ class TopicsController < ApplicationController
 
   def update
     @topic = Topic.find(params[:id])
-    if @topic.update_attributes(topic_params)
+    if @topic.update_attributes(permitted_params.topic)
       redirect_to topics_url, notice: "Updated topic."
     else
       render :edit
@@ -39,12 +39,5 @@ class TopicsController < ApplicationController
     redirect_to topics_url, notice: "Destroyed topic."
   end
 
-private
-	def topic_params
-		if current_user && current_user.admin?
-			params.require(:topic).permit! # the same as permit(:name, :sticky)
-		else
-			params.require(:topic).permit(:name)
-		end
-	end
+
 end
