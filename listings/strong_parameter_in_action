@@ -1,0 +1,26 @@
+rails c
+Loading development environment (Rails 3.2.8)
+>> Topic.new(sticky: true)
++----+------+--------+------------+------------+
+| id | name | sticky | created_at | updated_at |
++----+------+--------+------------+------------+
+|    |      | true   |            |            |
++----+------+--------+------------+------------+
+1 row in set
+>> params = ActionController::Parameters.new(sticky: true)
+=> {"sticky"=>true}
+>> Topic.new(params)
+ActiveModel::ForbiddenAttributes: ActiveModel::ForbiddenAttributes
+	from /home/petrero/.rvm/gems/ruby-1.9.3-p194@rails328/gems/strong_parameters-0.1.4/lib/active_model/forbidden_attributes_protection.rb:10:in `sanitize_for_mass_assignment'
+	from /home/petrero/.rvm/gems/ruby-1.9.3-p194@rails328/gems/activerecord-3.2.8/lib/active_record/attribute_assignment.rb:75:in `assign_attributes'
+	from /home/petrero/.rvm/gems/ruby-1.9.3-p194@rails328/gems/activerecord-3.2.8/lib/active_record/base.rb:498:in `initialize'
+	from (irb):3:in `new'
+	from (irb):3
+	from /home/petrero/.rvm/gems/ruby-1.9.3-p194@rails328/gems/railties-3.2.8/lib/rails/commands/console.rb:47:in `start'
+	from /home/petrero/.rvm/gems/ruby-1.9.3-p194@rails328/gems/railties-3.2.8/lib/rails/commands/console.rb:8:in `start'
+	from /home/petrero/.rvm/gems/ruby-1.9.3-p194@rails328/gems/railties-3.2.8/lib/rails/commands.rb:41:in `<top (required)>'
+	from script/rails:6:in `require'
+	from script/rails:6:in `<main>'
+>>params.to_hash
+=> {"sticky"=>true}
+
