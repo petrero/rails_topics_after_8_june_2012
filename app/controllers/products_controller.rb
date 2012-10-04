@@ -31,6 +31,8 @@ class ProductsController < ApplicationController
     else
       render :edit
     end
+	rescue ActiveRecord::StaleObjectError
+		render :confilct
   end
 
   def destroy
