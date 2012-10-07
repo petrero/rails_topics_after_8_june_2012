@@ -1,3 +1,3 @@
-handler = ->(template) { template.source }
+#handler = ->(template) { template.source }
 
-ActionView::Template.register_template_handler(:rb, handler)
+ActionView::Template.register_template_handler(:rb, :source.to_proc)
