@@ -36,3 +36,6 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+gem 'will_paginate'
+gem 'quiet_assets', group: :development
+gem 'thin'
