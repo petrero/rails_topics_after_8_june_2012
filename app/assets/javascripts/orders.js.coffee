@@ -9,3 +9,4 @@ jQuery ->
 		xkey: 'purchased_at'
 		ykeys: ['price', 'shipping_price', 'download_price']
 		labels: ['Price', 'Shipping Price', 'Download Price']	
+		preUnits: '$'
