@@ -38,4 +38,4 @@ gem 'jquery-rails'
 # gem 'debugger'
 gem 'quiet_assets', group: :development
 gem 'thin'
-gem 'acts-as-taggable-on'
+
