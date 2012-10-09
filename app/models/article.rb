@@ -1,3 +1,4 @@
 class Article < ActiveRecord::Base
-  attr_accessible :content, :name, :published_on
+  attr_accessible :content, :name,:tag_list
+	acts_as_taggable
 end
