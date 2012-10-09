@@ -1,0 +1,8 @@
+>> Rails.cache.write(:foo, 1, expires_in: 5.seconds)
+=> true
+>> Rails.cache.read(:foo)
+=> 1
+>> Rails.cache.read(:foo)
+=> nil
+>> 
+
