@@ -9,7 +9,7 @@
     <h2><%= link_to article.name, article %></h2>
     <%= simple_format article.content %>
 		<p>
-			Tags: <%=raw article.tag_list.map {|t| link_to t, tag_path(t)}.join(', ') %>
+			Tags: <%=raw article.tags.map(&:name).map {|t| link_to t, tag_path(t)}.join(', ') %>
 		</p>
     <p><%= link_to "Edit Article", edit_article_path(article) %></p>
   <% end %>
