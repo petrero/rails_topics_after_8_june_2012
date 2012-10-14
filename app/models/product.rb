@@ -1,6 +1,7 @@
 class Product < ActiveRecord::Base
   def filesize(*args)
-    @filesize ||= calculate_filesize(*args) 
+		@filesize ||= {}
+    @filesize[args] ||= calculate_filesize(*args) 
   end
 
 private
