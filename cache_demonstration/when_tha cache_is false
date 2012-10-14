@@ -1,0 +1,20 @@
+#@a || @a = "foo" is not exactly the same as @a ||= "bar"
+irb -w
+>> @a || @a = "foo"
+(irb):1: warning: instance variable @a not initialized
+=> "foo"
+>> @b ||= "bar"
+=> "bar"
+>> a || a = "foo"
+NameError: undefined local variable or method `a' for main:Object
+	from (irb):3
+	from /home/petrero/.rvm/rubies/ruby-1.9.3-p194/bin/irb:16:in `<main>'
+>> b ||= "bar"
+=> "bar"
+
+#output of localhost:3000 when i return false from calculate_filesize method
+
+@product.filesize # => false
+0.5 seconds
+@product.filesize # => false
+0.5 seconds #read the cache now
