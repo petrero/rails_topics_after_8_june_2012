@@ -1,0 +1,7 @@
+localhost:3000
+@product.filesize # => 4815162342
+0.5 seconds
+@product.filesize # => 4815162342
+0.0 seconds
+@product.filesize(2) # => 4815162342
+0.0 seconds
