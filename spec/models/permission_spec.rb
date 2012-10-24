@@ -7,7 +7,7 @@ RSpec::Matchers.define :allow do |*args|
 end
 
 
-describe Permission, focus: true do
+describe Permission do
 	describe "as guest" do
 		subject {Permission.new(nil)}
 		it { should allow("topics", "index") }
