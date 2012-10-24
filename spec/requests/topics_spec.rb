@@ -19,10 +19,14 @@ describe "Topic request" do
 		page.should have_content("Foobar")
 	end
 
-	it "updates topics as 
+	it "cannot edit topic as non-admin" do
+		log_in admin: false
+		topic = create(:topic)
+		visit edit_topic_path(topic)
+		page.should have_content("Not authorized.")
+	end
 
-
-admin" do
+	it "updates topics as admin" do
 		create(:topic, name: "Old Name")
 		log_in admin: true
 		visit topics_path

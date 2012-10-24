@@ -34,7 +34,8 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # Deploy with Capistrano
 # gem 'capistrano'
 gem 'strong_parameters'
-
+gem 'quiet_assets', group: :development
+gem 'thin'
 gem 'rspec-rails', group: [:test, :development]
 group :test do
 	gem 'factory_girl_rails'
