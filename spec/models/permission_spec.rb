@@ -46,29 +46,30 @@ describe Permission do
 		let(:other_topic) { build(:topic) }
 		subject {Permission.new(user)}
 
+		it "allows topics" do
+			should allow("topics", "index") 
+			should allow("topics", "show") 
+			should allow("topics", "new") 
+			should allow("topics", "create") 
+			should_not allow("topics", "edit") 
+			should_not allow("topics", "update") 
+			should_not allow("topics", "edit", other_topic) 
+			should_not allow("topics", "update", other_topic) 
+			should allow("topics", "edit", user_topic) 
+			should allow("topics", "update", user_topic) 
+			should_not allow("topics", "destroy") 
 
-		it { should allow("topics", "index") }
-		it { should allow("topics", "show") }
-		it { should allow("topics", "new") }
-		it { should allow("topics", "create") }
-		it { should_not allow("topics", "edit") }
-		it { should_not allow("topics", "update") }
-		it { should_not allow("topics", "edit", other_topic) }
-		it { should_not allow("topics", "update", other_topic) }
-		it { should allow("topics", "edit", user_topic) }
-		it { should allow("topics", "update", user_topic) }
-		it { should_not allow("topics", "destroy") }
+			should allow_param(:topic, :name) 
+			should_not allow_param(:topic, :sticky)
 
-		it { should allow_param(:topic, :name) }
-		it { should_not allow_param(:topic, :sticky) }
+			should allow("sessions", "new") 
+			should allow("sessions", "create") 
+			should allow("sessions", "destroy") 
 
-		it { should allow("sessions", "new") }
-		it { should allow("sessions", "create") }
-		it { should allow("sessions", "destroy") }
-
-		it { should allow("users", "new") }
-		it { should allow("users", "create") }
-		it { should allow("users", "edit") }
-		it { should allow("users", "update") }
+			should allow("users", "new") 
+			should allow("users", "create") 
+			should allow("users", "edit") 
+			should allow("users", "update") 
+		end
 	end		
 end
