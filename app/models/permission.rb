@@ -1,5 +1,5 @@
 class Permission < Struct.new(:user)
 	def allow?(controller, action)
-		user && user.admin?
+		controller == "topics" && action == "index"
 	end
 end
