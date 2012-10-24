@@ -13,7 +13,7 @@ class TopicsController < ApplicationController
   end
 
   def create
-    @topic = Topic.new(topic_params)
+    @topic = Topic.new(params[:topic])
     @topic.user = current_user
     if @topic.save
       redirect_to @topic, notice: "Created topic."
@@ -28,7 +28,7 @@ class TopicsController < ApplicationController
 
   def update
     @topic = current_resource
-    if @topic.update_attributes(topic_params)
+    if @topic.update_attributes(params[:topic])
       redirect_to topics_url, notice: "Updated topic."
     else
       render :edit
@@ -43,9 +43,6 @@ class TopicsController < ApplicationController
 
 private
 
-  def topic_params
-    params.require(:topic).permit(:name, :sticky)
-  end
 
 	def current_resource
 		@current_resource ||= Topic.find(params[:id]) if params[:id]
