@@ -47,8 +47,12 @@ private
     params.require(:topic).permit(:name, :sticky)
   end
 
+	def current_permission
+		@current_permission ||= Permission.new(current_user)
+	end
+
 	def authorize
-		if current_user && !current_user.admin?
+		if !current_permission.allow?
 			redirect_to root_url, alert: "Not authorized."
 		end 
 	end
