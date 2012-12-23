@@ -36,3 +36,13 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+gem 'will_paginate'
+
+group :test, :development do
+	gem 'rspec-rails'
+	gem 'jasminerice'
+end
+group :test do
+  gem 'capybara'
+  gem 'launchy'
+end
