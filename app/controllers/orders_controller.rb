@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
 	def index
+		sleep 1
     @orders = Order.page(params[:page]).per_page(10)
   end
 
