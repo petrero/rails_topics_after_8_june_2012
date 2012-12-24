@@ -1,1 +1,4 @@
 rspec . --tag '~js'
+
+https://github.com/ariya/phantomjs/wiki/Related-Projects
+https://github.com/ariya/phantomjs/wiki/Headless-Testing
