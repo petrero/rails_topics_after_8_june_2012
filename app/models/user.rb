@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username
 
   has_secure_password
+
+	def self.new_guest
+		new {|u| u.guest = true}
+	end
 end
