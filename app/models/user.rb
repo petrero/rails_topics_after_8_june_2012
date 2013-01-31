@@ -19,4 +19,8 @@ class User < ActiveRecord::Base
 	def self.new_guest
 		new {|u| u.guest = true}
 	end
+
+	def name
+		guest ? "Guest" : username
+	end
 end

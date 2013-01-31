@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(:version => 20130131181420) do
   create_table "tasks", :force => true do |t|
     t.integer  "user_id"
     t.string   "name"
-    t.boolean  "complete"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.boolean  "complete",   :default => false, :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   add_index "tasks", ["user_id"], :name => "index_tasks_on_user_id"
