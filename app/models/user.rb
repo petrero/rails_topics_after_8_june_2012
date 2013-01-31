@@ -23,4 +23,8 @@ class User < ActiveRecord::Base
 	def name
 		guest ? "Guest" : username
 	end
+
+	def move_to(user)
+		tasks.update_all(user_id: user_id)
+	end
 end
