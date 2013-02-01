@@ -20,9 +20,22 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
 gem 'quiet_assets', group: :development
 gem 'thin'
+
+gem 'will_paginate'
+gem 'omniauth-twitter'
+gem 'letter_opener', group: :development
+
+gem 'bcrypt-ruby'
+
+gem 'rspec-rails', group: [:test, :development]
+
+group :test do
+	gem 'factory_girl_rails'
+	gem 'capybara'
+	gem 'launchy'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
