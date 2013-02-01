@@ -5,8 +5,9 @@ class GuestProfile < ActiveRecord::Base
 		true
 	end
 
-  def move_to(user)
-    tasks.update_all(user_id: user.id)
+  def become_member(member_profile)
+    user.profile = member_profile
+		user.save!
   end
 
   def name
