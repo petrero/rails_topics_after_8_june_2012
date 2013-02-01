@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130201085335) do
+ActiveRecord::Schema.define(:version => 20130201095533) do
+
+  create_table "guest_profiles", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "member_profiles", :force => true do |t|
+    t.string   "username"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "tasks", :force => true do |t|
     t.integer  "user_id"
@@ -24,12 +37,11 @@ ActiveRecord::Schema.define(:version => 20130201085335) do
   add_index "tasks", ["user_id"], :name => "index_tasks_on_user_id"
 
   create_table "users", :force => true do |t|
-    t.string   "username"
-    t.string   "email"
-    t.string   "password_digest"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.string   "type"
+    t.integer  "profile_id"
+    t.string   "profile_type"
   end
 
 end

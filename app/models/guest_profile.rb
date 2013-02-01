@@ -1,4 +1,6 @@
-class Guest < User
+class GuestProfile < ActiveRecord::Base
+  has_one :user, as: :profile, dependent: :destroy
+
 	def guest?
 		true
 	end

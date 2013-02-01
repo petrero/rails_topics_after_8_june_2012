@@ -1,7 +1,10 @@
-class Member < Guest
-	attr_accessible :username, :email, :password, :password_confirmation
+class MemberProfile < ActiveRecord::Base
+	has_one :user, as: :profile, dependent: :destroy
 
-  validates_presence_of :username, :email, :password_digest
+
+  attr_accessible :username, :email, :password, :password_confirmation
+
+  validates_presence_of :username, :email
   validates_uniqueness_of :username
   validates_confirmation_of :password
 
@@ -20,10 +23,11 @@ class Member < Guest
   # end
   #
   # def can_share_task?(task)
-  #   task.user_id == id
+  #   task.user_id == user.id
   # end
   #
   # def send_password_reset
   #   UserMailer.password_reset(self).deliver
   # end
+
 end
