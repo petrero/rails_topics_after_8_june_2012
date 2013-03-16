@@ -38,3 +38,4 @@ gem 'thin'
 
 # To use debugger
 # gem 'debugger'
+gem 'ancestry'
