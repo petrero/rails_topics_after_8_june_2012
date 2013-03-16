@@ -1,3 +1,4 @@
 class Page < ActiveRecord::Base
-  attr_accessible :ancestry, :content, :name
+  attr_accessible :parent_id, :content, :name
+	has_ancestry
 end
