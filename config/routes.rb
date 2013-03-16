@@ -3,6 +3,7 @@ RailsTopicsAfter8June2012::Application.routes.draw do
 
 	resources :pages, only: [:index, :new, :create]
 	resources :pages, path: "", except: [:index, :new, :create]
+	get '*id', to: "pages#show"
 
 	root to: "pages#index"
   # The priority is based upon order of creation:
