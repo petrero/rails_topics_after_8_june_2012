@@ -1,7 +1,10 @@
 RailsTopicsAfter8June2012::Application.routes.draw do
-  resources :pages
-	root to: "pages#index"
 
+
+	resources :pages, only: [:index, :new, :create]
+	resources :pages, path: "", except: [:index, :new, :create]
+
+	root to: "pages#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
