@@ -1,0 +1,4 @@
+http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/
+http://stevenharman.net/bag-of-methods-module-and-grep-driven-development
+https://gist.github.com/ryanb/4172391
+http://37signals.com/svn/posts/3372-put-chubby-models-on-a-diet-with-concerns
