@@ -1,3 +1,4 @@
+<%= content_for :title, @page.name %>
 <ul id="menu">
 	<% Page.roots.each do |page| %>
 		<li><%= link_to page.name, page, class: ("active" if @page.root == page) %></li>
@@ -14,21 +15,9 @@
 
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @page.name %>
-</p>
+<h1><%= @page.name %></h1>
 
-<p>
-  <b>Content:</b>
-  <%= @page.content %>
-</p>
-
-<p>
-  <b>Ancestry:</b>
-  <%= @page.ancestry %>
-</p>
-
+<%= simple_format @page.content %>
 
 <%= link_to 'Edit', edit_page_path(@page) %> |
 <%= link_to 'Back', pages_path %>
