@@ -34,6 +34,7 @@ gem 'thin'
 # gem 'unicorn'
 
 # Deploy with Capistrano
+gem 'rack-mini-profiler'
 # gem 'capistrano'
 
 # To use debugger
