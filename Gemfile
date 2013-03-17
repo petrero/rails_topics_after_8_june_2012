@@ -20,6 +20,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'dalli'
+
 gem 'jquery-rails'
 gem 'quiet_assets', group: :development
 gem 'thin'
