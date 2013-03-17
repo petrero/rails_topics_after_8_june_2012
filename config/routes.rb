@@ -1,5 +1,8 @@
 RailsTopicsAfter8June2012::Application.routes.draw do
 
+  resources :search_suggestions
+
+
   resources :products
 	root to: "products#index"
 
