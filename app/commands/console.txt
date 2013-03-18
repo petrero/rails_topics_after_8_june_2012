@@ -17,3 +17,10 @@ Loading development environment (Rails 3.2.12)
 => ActiveSupport::TimeWithZone
 >> Time.now.in_time.zone
 => Mon, 18 Mar 2013 22:19:20 EET +02:00
+
+>> Date.today */ will use local system time zone */
+=> Mon, 18 Mar 2013
+>> Date.current
+=> Mon, 18 Mar 2013 */ use rails configured time zone */
+>> Time.zone.now.to_date  */ if you need a date */
+=> Mon, 18 Mar 2013
