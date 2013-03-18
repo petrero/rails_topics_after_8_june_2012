@@ -1,0 +1,9 @@
+*/ some help detecting time zone issues in a rails app */
+https://github.com/highgroove/zonebie
+
+*/ working with time zones in a rails test suit */
+https://github.com/travisjeffery/timecop
+
+*/ automatic detection of time zone using javascript */
+http://pellepim.bitbucket.org/jstz/
+http://www.hungryfools.com/2008/03/after-2-months-of-extensive-development.html
