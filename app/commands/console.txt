@@ -1,0 +1,12 @@
+Loading development environment (Rails 3.2.12)
+>> h = Haiku.last
+  Haiku Load (0.2ms)  SELECT "haikus".* FROM "haikus" ORDER BY "haikus"."id" DESC LIMIT 1
+=> #<Haiku id: 9, content: "Sasquatch has great ears", user_id: 1, published_at: "2013-03-18 17:42:01", created_at: "2013-03-18 17:42:01", updated_at: "2013-03-18 17:42:01">
+>> h.published_at
+=> Mon, 18 Mar 2013 19:42:01 EET +02:00
+>> h.published_at_before_type_cast
+=> "2013-03-18 17:42:01.703612"
+>> Time.now
+=> 2013-03-18 22:06:55 +0200
+>> Time.zone.now
+=> Mon, 18 Mar 2013 22:07:04 EET +02:00
