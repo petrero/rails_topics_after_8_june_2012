@@ -10,3 +10,10 @@ Loading development environment (Rails 3.2.12)
 => 2013-03-18 22:06:55 +0200
 >> Time.zone.now
 => Mon, 18 Mar 2013 22:07:04 EET +02:00
+
+>> Time.now.class
+=> Time
+>> Time.zone.now.class
+=> ActiveSupport::TimeWithZone
+>> Time.now.in_time.zone
+=> Mon, 18 Mar 2013 22:19:20 EET +02:00
