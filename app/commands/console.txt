@@ -24,3 +24,9 @@ Loading development environment (Rails 3.2.12)
 => Mon, 18 Mar 2013 */ use rails configured time zone */
 >> Time.zone.now.to_date  */ if you need a date */
 => Mon, 18 Mar 2013
+
+
+>> Time.zone.parse("Jan 1, 2010")
+=> Fri, 01 Jan 2010 00:00:00 EET +02:00
+>> 4.weeks.ago
+=> Mon, 18 Feb 2013 22:32:47 EET +02:00 */ use proper time zone */
