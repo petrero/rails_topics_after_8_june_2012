@@ -7,7 +7,7 @@
     <%= csrf_meta_tag %>
   </head>
   <body>
-		<% Announcement.all.each do |announcement| %>
+		<% Announcement.current.each do |announcement| %>
 			<%= div_for announcement do %>
 				<%= announcement.message %>
 			<% end %>
