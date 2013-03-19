@@ -24,6 +24,14 @@ gem 'jquery-rails'
 gem 'quiet_assets', group: :development
 gem 'thin'
 
+gem 'rspec-rails', groups: [:test, :development]
+
+group :test do
+	gem 'capybara'
+	gem 'launchy'
+	gem 'poltergeist'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
