@@ -7,6 +7,8 @@ describe "Announcements" do
 		visit root_path
 		page.should have_content("Hello World")
 		page.should_not have_content("Upcoming")
+		click_on "hide announcement"
+		page.should_not have_content("Hello World")
   end
 
 end
