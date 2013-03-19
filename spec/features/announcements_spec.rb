@@ -11,11 +11,11 @@ describe "Announcements" do
 		page.should_not have_content("Hello World")
   end
 
-	it "displays active announcements", js: true do
+	it "stays on page when hiding announcements with javascript", js: true do
     Announcement.create! message: "Hello World!", starts_at: 1.hour.ago, ends_at: 1.hour.from_now
 		visit root_path
 		page.should have_content("Hello World")
-		click_on "hide announcement"
+		expect { click_on "hide announcement" }.to_not change { page.response_headers }
 		page.should_not have_content("Hello World")
   end
 end
