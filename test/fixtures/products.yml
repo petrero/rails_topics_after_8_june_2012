@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  category: 
+  name: MyString
+  price: 9.99
+  discontinued: false
+
+two:
+  category: 
+  name: MyString
+  price: 9.99
+  discontinued: false
