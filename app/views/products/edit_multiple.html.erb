@@ -5,6 +5,11 @@
 		<% @products.each do |product| %>
 			<%= hidden_field_tag "product_ids[]", product.id %>
 			<li><%= product.name %></li>
+			<ul class="errors">
+		    <% product.errors.full_messages.each do |msg| %>
+		      <li><%= msg %></li>
+		    <% end %>
+      </ul>
 		<% end %>
 	</ul>
 	<%= fields_for :product do |f|%>
@@ -21,7 +26,7 @@
 			<%= f.collection_select :category_id, Category.order("name"), :id, :name, include_blank: true %>
 		</div>
 		<div class="field">
-			<%= f.check_box :discontinued %>
+			<%= f.label :discontinued %>
 			<%= f.select :discontinued, [["Yes", true], ["No", false]], include_blank: true %>
 		</div>
 
