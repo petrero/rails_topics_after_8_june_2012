@@ -1,6 +1,6 @@
 class Comment < ActiveRecord::Base
 	include PublicActivity::Model
-	tracked
+	tracked owner: ->(controller, model) { controller.current_user }
 
   belongs_to :user
   belongs_to :recipe
