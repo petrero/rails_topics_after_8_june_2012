@@ -1,13 +1,4 @@
-class UserPresenter
-	def initialize(user, template)
-		@user = user
-		@template = template
-	end
-
-	def h
-		@template
-	end
-
+class UserPresenter < BasePresenter
 	def avatar
 		h.link_to_if @user.url.present?, h.image_tag("avatars/#{avatar_name}", class: "avatar"), @user.url
 	end
