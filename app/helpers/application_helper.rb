@@ -12,4 +12,11 @@ module ApplicationHelper
 
 		markdown.render(text).html_safe
 	end
+
+	def present(object, klass = nil)
+		klass ||= "#{object.class}Presenter".constantize
+		presenter = klass.new(object, self)
+		yield presenter if block.given?
+		presenter
+	end
 end
