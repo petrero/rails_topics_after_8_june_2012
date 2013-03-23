@@ -14,6 +14,9 @@ class BasePresenter
 		@template
 	end
 
+	def method_missing(*args, &block)
+		@template.send(*args, &block)
+	end
 private
 	def markdown(text)
 		renderer = Redcarpet::Render::HTML.new({

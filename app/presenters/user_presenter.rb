@@ -3,7 +3,7 @@ class UserPresenter < BasePresenter
 	delegate :username, to: :user
 
 	def avatar
-		site_link h.image_tag("avatars/#{avatar_name}", class: "avatar")
+		site_link image_tag("avatars/#{avatar_name}", class: "avatar")
 	end
 
 	def linked_name
@@ -17,13 +17,13 @@ class UserPresenter < BasePresenter
 
 	def website
 		handle_none user.url do
-		  h.link_to user.url, user.url
+		  link_to user.url, user.url
 		end
 	end
 
 	def twitter
 		handle_none user.twitter_name do
-		  h.link_to user.twitter_name, "http://twitter.com/#{user.twitter_name}"
+		  link_to user.twitter_name, "http://twitter.com/#{user.twitter_name}"
 		end
 	end
 
@@ -51,6 +51,6 @@ private
 	end
 
 	def site_link(content)
-		h.link_to_if(user.url.present?, content, user.url)
+		link_to_if(user.url.present?, content, user.url)
 	end
 end
