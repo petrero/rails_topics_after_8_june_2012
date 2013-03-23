@@ -3,11 +3,11 @@ class UserPresenter < BasePresenter
 	delegate :username, to: :user
 
 	def avatar
-		h.link_to_if user.url.present?, h.image_tag("avatars/#{avatar_name}", class: "avatar"), user.url
+		site_link h.image_tag("avatars/#{avatar_name}", class: "avatar")
 	end
 
 	def linked_name
-		h.link_to_if user.url.present?, (user.full_name.present? ? user.full_name : user.username), user.url
+		site_link(user.full_name.present? ? user.full_name : user.username)
 	end
 
 
@@ -16,26 +16,20 @@ class UserPresenter < BasePresenter
 	end
 
 	def website
-		if user.url.present?
+		handle_none user.url do
 		  h.link_to user.url, user.url
-		else
-		  h.content_tag :span, "None given", class: "none"
 		end
 	end
 
 	def twitter
-		if user.twitter_name.present?
+		handle_none user.twitter_name do
 		  h.link_to user.twitter_name, "http://twitter.com/#{user.twitter_name}"
-		else
-		  h.content_tag :span, "None given", class: "none"
 		end
 	end
 
 	def bio
-		if user.bio.present?
+		handle_none user.bio do
 		  markdown(user.bio)
-		else
-		  h.content_tag :span, "None given", class: "none"
 		end
 	end
 private
@@ -47,4 +41,16 @@ private
       "default.png"
     end
   end
+
+	def handle_none(value)
+		if value.present?
+			yield
+		else
+			content_tag :span, "None given", class: "none"
+		end
+	end
+
+	def site_link(content)
+		h.link_to_if(user.url.present?, content, user.url)
+	end
 end
