@@ -9,7 +9,7 @@ private
   helper_method :current_user
 
 
-	def default_serializer_options
-		{root: false}
-	end
+	#def default_serializer_options
+		#{root: false}
+	#end
 end
