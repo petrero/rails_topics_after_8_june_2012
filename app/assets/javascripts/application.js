@@ -18,4 +18,3 @@
 //= require_self
 //= require rails_topics_after8_june2012
 RailsTopicsAfter8June2012 = Ember.Application.create();
-//= require_tree .

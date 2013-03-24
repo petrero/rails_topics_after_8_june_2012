@@ -1,3 +1,5 @@
+
+
 RailsTopicsAfter8June2012::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
@@ -34,4 +36,6 @@ RailsTopicsAfter8June2012::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+	config.ember.variant = :development
 end
