@@ -2,6 +2,7 @@ class ArticleSerializer < ActiveModel::Serializer
   attributes :id, :name, :content, :url
 	has_many :comments
 	embed :ids, include: true
+	delegate :current_user, to: :scope
 
 	def url
 		article_url(object)
@@ -9,7 +10,7 @@ class ArticleSerializer < ActiveModel::Serializer
 
 	def attributes
 		data = super
-		data[:edit_url] = edit_article_url if scope.admin?
+		data[:edit_url] = edit_article_url if current_user.admin?
 		data
 	end
 end
