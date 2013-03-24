@@ -1,4 +1,4 @@
-RailsTopicsAfter8June2012.EntriesController = Ember.Controller.extend
+RailsTopicsAfter8June2012.EntriesController = Ember.ArrayController.extend
 	entries: []
 
 	addEntry: ->
