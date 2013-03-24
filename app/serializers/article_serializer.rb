@@ -6,4 +6,10 @@ class ArticleSerializer < ActiveModel::Serializer
 	def url
 		article_url(object)
 	end
+
+	def attributes
+		data = super
+		data[:edit_url] = edit_article_url if scope.admin?
+		data
+	end
 end
