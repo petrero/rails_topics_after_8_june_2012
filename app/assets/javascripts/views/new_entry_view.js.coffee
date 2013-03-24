@@ -3,5 +3,6 @@ RailsTopicsAfter8June2012.NewEntryView = Ember.View.extend
 	tagName: 'form'
 
 	submit: ->
-		@get('controller').send('addEntry')
+		@get('controller').send('addEntry', @get('newEntryName'))
+		@set('newEntryName', "")
 		false

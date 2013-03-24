@@ -1,7 +1,7 @@
 RailsTopicsAfter8June2012.EntriesController = Ember.ArrayController.extend
-	addEntry: ->
-		RailsTopicsAfter8June2012.Entry.createRecord(name: @get('newEntryName'))
-		@set('newEntryName', "")
+	addEntry: (name)->
+		RailsTopicsAfter8June2012.Entry.createRecord(name: name)
+
 
 	drawWinner: ->
 		@setEach('highlight', false)
