@@ -2,7 +2,10 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-@RaffleCtrl = ($scope) ->
+app = angular.module("Raffler", ["ngResource"])
+
+@RaffleCtrl = ($scope, $resource) ->
+	Entry = $resource("/entries/:id", {id: "@id"})
 	$scope.entries = [
 		{name: "Larry"}
 		{name: "Curly"}
