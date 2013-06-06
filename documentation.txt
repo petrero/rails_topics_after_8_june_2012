@@ -1,0 +1,6 @@
+http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/
+https://github.com/rails/rails/blob/master/activemodel/lib/active_model/model.rb
+
+gems for form object approach
+https://github.com/solnic/virtus
+https://github.com/apotonick/reform
