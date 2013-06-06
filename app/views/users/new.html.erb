@@ -1,11 +1,11 @@
 <h1>Sign Up</h1>
 
-<%= form_for @signup_path, url: users_path do |f| %>
-  <% if @user.errors.any? %>
+<%= form_for @signup_form, url: users_path do |f| %>
+  <% if @signup_form.errors.any? %>
     <div class="error_messages">
       <h2>Form is invalid</h2>
       <ul>
-        <% @user.errors.full_messages.each do |message| %>
+        <% @signup_form.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
